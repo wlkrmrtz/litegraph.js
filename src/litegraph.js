@@ -6269,6 +6269,7 @@ LGraphNode.prototype.executeAction = function(action)
 
         e.canvasX = e.localX / this.ds.scale - this.ds.offset[0];
         e.canvasY = e.localY / this.ds.scale - this.ds.offset[1];
+        e.canvasY = e.offsetY / this.scale - this.offset[1];
     };
 
     /**
@@ -10356,7 +10357,7 @@ LGraphNode.prototype.executeAction = function(action)
         var top = options.top || 0;
         if (options.event) {
             left = options.event.clientX - 10;
-            top = options.event.clientY - 10;
+            top = options.event.y - 10;
             if (options.title) {
                 top -= 20;
             }
