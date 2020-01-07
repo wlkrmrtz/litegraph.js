@@ -7722,6 +7722,16 @@ LGraphNode.prototype.executeAction = function(action)
         num_sublines
     ) {
         if (link) {
+            if (link.hasOwnProperty("added")) {
+                if (link.added == true) {
+                    color = "#00d27f";
+                }
+                else {
+                    color = "#9A9";
+                }
+            } else {
+                color = "#9A9";
+            }
             this.visible_links.push(link);
         }
 
